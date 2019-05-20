@@ -1,4 +1,4 @@
-<template v-if="lostGame">
+<template>
   <div class="big-header">
     <h1>Niveau {{ id }} - {{ title }}</h1>
     <!-- <h1>{{ subtitle }}</h1> -->
@@ -25,15 +25,21 @@
     <Suspect3></Suspect3>
     <Suspect4></Suspect4>
   </section>
+
+    <p>{{ text }} ici</p>
     
     <router-link 
       class="button button__bedroom" 
       to="/bedroom">
-      Aller à la chambre
+      Aller dans la chambre
     </router-link>
 
     <p class="showText"></p>
     <!-- <p>{{count}}</p> -->
+
+    <template v-if="lostGame">
+      <h1>C'est perdu</h1>
+    </template>
 
     <Tools></Tools>
   </div>
@@ -44,7 +50,7 @@
   .button__bedroom {
     position: absolute;
     right: 60px;
-    width: 70px;
+    width: 80px;
   }
   .button__answer {
     position: absolute;
@@ -69,7 +75,8 @@ import Suspect4 from '../components/Suspect4.vue';
 export default {
     data() {
       return {
-        count : audioCount.value(),
+        //count : audioCount.value(),
+        text: '',
         textCount: 0
         // susp: [
         //   { suspectID: 0, 
@@ -90,7 +97,7 @@ export default {
         // ]
       }
     },
-    props: ['suspectId','name','text'],
+    props: ['suspectId','name'],
     components: {
       Tools,
       Suspect1,
@@ -117,6 +124,9 @@ export default {
       phrases() {
         return data[this.id].suspects.phrases;
       },
+      count() {
+      return audioCount.data.value();
+      }
       // showMessage() {
       //   //document.querySelector('.show-text').innerHTML = id; 
       //   // let memo = i;
@@ -126,6 +136,7 @@ export default {
       //   //   i = 0;
       //   // }
       // }
+        
     },
     methods:{
       
@@ -145,6 +156,22 @@ export default {
           }
 
       },
+      // lostGame() {
+      //   // if (localStorage.getItem('audio') < 0) {
+      //   //   console.log('perdu');
+      //   //   $router.push({ path : 'loose'});
+      //   // }
+
+      //   if (this.count < 0) {
+      //     //this.$router.push({name: 'loose'});
+      //     return false;
+      //   } else {
+      //     return true;
+      //   }
+      // }
+      // count() {
+      //   return audioCount.value();
+      // }
       lostGame() {
         // if (localStorage.getItem('audio') < 0) {
         //   console.log('perdu');
@@ -152,13 +179,12 @@ export default {
         // }
 
         if (this.count < 0) {
-          this.$router.push({name: 'loose'});
+          //this.$router.push({name: 'loose'});
+          return false;
+        } else {
+          return true;
         }
       }
-      // count() {
-      //   return audioCount.value();
-      // }
-
 
     }
 }

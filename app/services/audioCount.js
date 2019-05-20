@@ -6,7 +6,7 @@ class AudioCount {
     this.data = new Vue({
       data() {
         return {
-          count: 0
+          count: 10
         };
       }
     });

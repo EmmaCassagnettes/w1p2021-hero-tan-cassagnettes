@@ -10,8 +10,8 @@
         "name": "Jun",
         "goto": 2,
         "phrases": [
-          "phrase1.1jjun",
-          "phrase1.2jun"
+          "phrase1.1jun!",
+          "phrase1.2jun!"
         ]
       },
       {
@@ -19,9 +19,29 @@
         "name": "Yukio",
         "goto": 2,
         "phrases": [
-          "phrase1.1yukio",
-          "phrase1.2",
-          "phrase1.3"
+          "phrase1.1yukio!",
+          "phrase1.2yukio!",
+          "phrase1.3yukio!"
+        ]
+      },
+      {
+        "suspectId": 3,
+        "name": "Noriko",
+        "goto": 2,
+        "phrases": [
+          "phrase1.1noriko!",
+          "phrase1.2noriko!",
+          "phrase1.3noriko!"
+        ]
+      },
+      {
+        "suspectId": 4,
+        "name": "Pat",
+        "goto": 2,
+        "phrases": [
+          "phrase1.1pat!",
+          "phrase1.2pat!",
+          "phrase1.3pat!"
         ]
       }
     ]
@@ -42,8 +62,8 @@
         "name": "Jun",
         "goto": 3,
         "phrases": [
-          "phrase1",
-          "phrase2"
+          "phrase2.1jun!",
+          "phrase2.2jun!"
         ]
       },
       {
@@ -51,8 +71,28 @@
         "name": "Yukio",
         "goto": 3,
         "phrases": [
-          "phrase1",
-          "phrase2"
+          "phrase2.1yukio!",
+          "phrase2.2yukio!"
+        ]
+      },
+      {
+        "suspectId": "3",
+        "name": "Noriko",
+        "goto": 3,
+        "phrases": [
+          "phrase2.1noriko!",
+          "phrase2.2noriko!",
+          "phrase2.3noriko!"
+        ]
+      },
+      {
+        "suspectId": 4,
+        "name": "Pat",
+        "goto": 3,
+        "phrases": [
+          "phrase2.1pat!",
+          "phrase2.2pat!",
+          "phrase2.3pat!"
         ]
       }
     ]
@@ -73,8 +113,8 @@
         "name": "Jun",
         "goto": 4,
         "phrases": [
-          "phrase1",
-          "phrase2"
+          "phrase3.1jun!",
+          "phrase3.2jun!"
         ]
       },
       {
@@ -82,8 +122,28 @@
         "name": "Yukio",
         "goto": 4,
         "phrases": [
-          "phrase1",
-          "phrase2"
+          "phrase3.1yukio!",
+          "phrase3.2yukio!"
+        ]
+      },
+      {
+        "suspectId": 3,
+        "name": "Noriko",
+        "goto": 4,
+        "phrases": [
+          "phrase3.1noriko!",
+          "phrase3.2noriko!",
+          "phrase3.3noriko!"
+        ]
+      },
+      {
+        "suspectId": 4,
+        "name": "Pat",
+        "goto": 4,
+        "phrases": [
+          "phrase3.1pat!",
+          "phrase3.2pat!",
+          "phrase3.3pat!"
         ]
       }
     ]
@@ -102,19 +162,35 @@
       {
         "suspectId": "1",
         "name": "Jun",
-        "goto": 5,
         "phrases": [
-          "phrase1",
-          "phrase2"
+          "phrase4.1jun!",
+          "phrase4.2jun!"
         ]
       },
       {
         "suspectId": "2",
         "name": "Yukio",
-        "goto": 6,
         "phrases": [
-          "phrase1",
-          "phrase2"
+          "phrase4.1yukio!",
+          "phrase4.2yukio!"
+        ]
+      },
+      {
+        "suspectId": 3,
+        "name": "Noriko",
+        "phrases": [
+          "phrase4.1noriko!",
+          "phrase4.2noriko!",
+          "phrase4.3noriko!"
+        ]
+      },
+      {
+        "suspectId": 4,
+        "name": "Pat",
+        "phrases": [
+          "phrase4.1pat!",
+          "phrase4.2pat!",
+          "phrase4.3pat!"
         ]
       }
     ]
