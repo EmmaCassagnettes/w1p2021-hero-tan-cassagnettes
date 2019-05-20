@@ -7,6 +7,8 @@ URL du site : http://votre-url-ici.com
 - Amanda Tan
 - Emma Cassagnettes
 
+### Grille d'auto-évaluation
+
 ## Prologue
 
 - Voici le cahier des charges que doit respecter **au minimum** le projet.
