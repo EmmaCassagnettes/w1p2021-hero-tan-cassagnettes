@@ -31,9 +31,9 @@
 import audioCount from '../services/audioCount';
 
 export default {
-  data() {
-    return {
-      count : audioCount.value()
+  computed: {
+    count() {
+      return audioCount.data.count;
     }
   }
 };

@@ -1,25 +1,35 @@
+import Vue from 'vue';
+
 class AudioCount {
   constructor() {
     //Save audio after refresh
+    this.data = new Vue({
+      data() {
+        return {
+          count: 0
+        };
+      }
+    });
+
     if (localStorage.getItem('audio')) {
-      this.count = localStorage.getItem('audio');
+      this.data.count = localStorage.getItem('audio');
     } else {
-      this.count = 10;
+      this.data.count = 10;
     }
-    // this.count = 10;
+    // this.data.count = 10;
     
   }
   decrement() {
-    this.count--;
+    this.data.count--;
 
-    if (this.count < 0) {
-      this.count = 0;
+    if (this.data.count < 0) {
+      this.data.count = 0;
     }
 
-    localStorage.setItem('audio', this.count);
+    localStorage.setItem('audio', this.data.count);
   }
   value() {
-    return this.count;
+    return this.data.count;
   }
 }
 

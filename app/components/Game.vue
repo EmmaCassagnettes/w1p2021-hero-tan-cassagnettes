@@ -1,4 +1,4 @@
-<template>
+<template v-if="lostGame">
   <div class="big-header">
     <h1>Niveau {{ id }} - {{ title }}</h1>
     <!-- <h1>{{ subtitle }}</h1> -->
@@ -116,7 +116,7 @@ export default {
       },
       phrases() {
         return data[this.id].suspects.phrases;
-      }
+      },
       // showMessage() {
       //   //document.querySelector('.show-text').innerHTML = id; 
       //   // let memo = i;
@@ -133,8 +133,8 @@ export default {
         console.log('Compte bordel');
         audioCount.decrement();
 
-        // let i = this.id;
-        // i = 0;  
+        // Show phrases
+        
         document.querySelector('.show-text').innerHTML = this.suspects[this.textCount]['phrases'][this.textCount];
         // //let memo = i;
         this.textCount++;
@@ -152,10 +152,12 @@ export default {
         // }
 
         if (this.count < 0) {
-          console.log('perdu');
           this.$router.push({name: 'loose'});
         }
       }
+      // count() {
+      //   return audioCount.value();
+      // }
 
 
     }
