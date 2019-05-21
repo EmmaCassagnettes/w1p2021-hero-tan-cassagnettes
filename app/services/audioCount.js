@@ -32,6 +32,11 @@ class AudioCount {
 
     localStorage.setItem('audio', this.data.count);
   }
+  increment() {
+    this.data.count++;
+
+    localStorage.setItem('audio', this.data.count);
+  }
   value() {
     return this.data.count;
   }
