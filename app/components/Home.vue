@@ -12,7 +12,7 @@ import audioCount from '../services/audioCount';
 export default {
   data() {
     return {
-      message: 'Bienvenue dans Emma !'
+      message: 'Bienvenue dans Amanda !'
     };
   }
 };

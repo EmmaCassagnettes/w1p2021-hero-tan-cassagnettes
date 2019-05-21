@@ -25,15 +25,21 @@
     <Suspect3></Suspect3>
     <Suspect4></Suspect4>
   </section>
+
+    <p>{{ text }} ici</p>
     
     <router-link 
       class="button button__bedroom" 
       to="/bedroom">
-      Aller à la chambre
+      Aller dans la chambre
     </router-link>
 
     <p class="showText"></p>
     <!-- <p>{{count}}</p> -->
+
+    <template v-if="lostGame === true">
+      <h1>C'est perdu</h1>
+    </template>
 
     <Tools></Tools>
   </div>
@@ -44,7 +50,7 @@
   .button__bedroom {
     position: absolute;
     right: 60px;
-    width: 70px;
+    width: 80px;
   }
   .button__answer {
     position: absolute;
@@ -69,7 +75,8 @@ import Suspect4 from '../components/Suspect4.vue';
 export default {
     data() {
       return {
-        count : audioCount.value(),
+        //count : audioCount.value(),
+        text: '',
         textCount: 0
         // susp: [
         //   { suspectID: 0, 
@@ -90,7 +97,7 @@ export default {
         // ]
       }
     },
-    props: ['suspectId','name','text'],
+    props: ['suspectId','name'],
     components: {
       Tools,
       Suspect1,
@@ -116,6 +123,19 @@ export default {
       },
       phrases() {
         return data[this.id].suspects.phrases;
+      },
+      count() {
+      return audioCount.value();
+      },
+      lostGame() {
+        // if (localStorage.getItem('audio') < 0) {
+        //   $router.push({ path : 'loose'});
+        // }
+
+        if (audioCount.value() < 0) {
+          this.$router.push({name: 'loose'});
+          //return true;
+        }
       }
       // showMessage() {
       //   //document.querySelector('.show-text').innerHTML = id; 
@@ -126,6 +146,7 @@ export default {
       //   //   i = 0;
       //   // }
       // }
+        
     },
     methods:{
       
@@ -133,8 +154,8 @@ export default {
         console.log('Compte bordel');
         audioCount.decrement();
 
-        // let i = this.id;
-        // i = 0;  
+        // Show phrases
+        
         document.querySelector('.show-text').innerHTML = this.suspects[this.textCount]['phrases'][this.textCount];
         // //let memo = i;
         this.textCount++;
@@ -144,19 +165,24 @@ export default {
             this.textCount = 0;
           }
 
-      },
-      lostGame() {
-        // if (localStorage.getItem('audio') < 0) {
-        //   console.log('perdu');
-        //   $router.push({ path : 'loose'});
-        // }
-
-        if (this.count < 0) {
-          console.log('perdu');
-          this.$router.push({name: 'loose'});
-        }
       }
+      // lostGame() {
+      //   // if (localStorage.getItem('audio') < 0) {
+      //   //   console.log('perdu');
+      //   //   $router.push({ path : 'loose'});
+      //   // }
 
+      //   if (this.count < 0) {
+      //     //this.$router.push({name: 'loose'});
+      //     return false;
+      //   } else {
+      //     return true;
+      //   }
+      // }
+      // count() {
+      //   return audioCount.value();
+      // }
+   
 
     }
 }
