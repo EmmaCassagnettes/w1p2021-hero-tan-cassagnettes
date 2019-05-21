@@ -22,14 +22,22 @@ class AudioCount {
   decrement() {
     this.data.count--;
 
-    if (this.data.count < 0) {
-      this.data.count = 0;
-    }
+    // if (this.data.count < 0) {
+    //   this.data.count = 0;
+    // }
+
+    // if (this.data.count < 0) {
+    //   this.data.count = 0;
+    // }
 
     localStorage.setItem('audio', this.data.count);
   }
   value() {
     return this.data.count;
+  }
+  setvalue(value) {
+    this.data.count = value;
+    localStorage.setItem('audio', this.data.count);
   }
 }
 

@@ -37,7 +37,7 @@
     <p class="showText"></p>
     <!-- <p>{{count}}</p> -->
 
-    <template v-if="lostGame">
+    <template v-if="lostGame === true">
       <h1>C'est perdu</h1>
     </template>
 
@@ -125,7 +125,17 @@ export default {
         return data[this.id].suspects.phrases;
       },
       count() {
-      return audioCount.data.value();
+      return audioCount.value();
+      },
+      lostGame() {
+        // if (localStorage.getItem('audio') < 0) {
+        //   $router.push({ path : 'loose'});
+        // }
+
+        if (audioCount.value() < 0) {
+          this.$router.push({name: 'loose'});
+          //return true;
+        }
       }
       // showMessage() {
       //   //document.querySelector('.show-text').innerHTML = id; 
@@ -155,7 +165,7 @@ export default {
             this.textCount = 0;
           }
 
-      },
+      }
       // lostGame() {
       //   // if (localStorage.getItem('audio') < 0) {
       //   //   console.log('perdu');
@@ -172,19 +182,7 @@ export default {
       // count() {
       //   return audioCount.value();
       // }
-      lostGame() {
-        // if (localStorage.getItem('audio') < 0) {
-        //   console.log('perdu');
-        //   $router.push({ path : 'loose'});
-        // }
-
-        if (this.count < 0) {
-          //this.$router.push({name: 'loose'});
-          return false;
-        } else {
-          return true;
-        }
-      }
+   
 
     }
 }
