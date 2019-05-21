@@ -43,7 +43,7 @@ export default {
       },
       phrases() {
         return data[this.id].suspects.phrases;
-      },
+      }
   },
 
   methods: {
