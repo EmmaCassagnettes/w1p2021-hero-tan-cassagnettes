@@ -4,7 +4,7 @@
     <br />
     <p>{{id}}</p>
     <label for="userAnswer">Entrez votre réponse</label>
-    <input type="text" id="userAnswer" name="userAnswer" class="userAnswer" maxlength="100" value="your answer" v-model="userAnswer" autocomplete="off" />
+    <input type="text" id="userAnswer" name="userAnswer" class="userAnswer" maxlength="100" value="your answer" v-model.lazy="userAnswer" autocomplete="off" />
    
 
      <!-- <button @click="handleAnswer" type="submit">Valider</button> -->
@@ -25,6 +25,9 @@
         Niveau suivant
       </router-link>
     </template>
+
+    <div v-if="errorAnswer === true">Mauvaise réponse</div>
+    
   </div>
 </template>
 
@@ -73,6 +76,12 @@ export default {
         if(this.userAnswer.toLowerCase().trim() === this.answer.toLowerCase() && this.id === '4') {
           this.$router.push({name: 'win'});
         } else if (this.userAnswer.toLowerCase().trim() === this.answer.toLowerCase() && this.id !== '4') {
+          return true
+        }
+      },
+
+      errorAnswer() {
+        if (this.userAnswer.toLowerCase().trim() !== this.answer.toLowerCase() && this.userAnswer !== '') {
           return true
         }
       }
