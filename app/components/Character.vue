@@ -47,6 +47,7 @@
 <script>
 import data from '../assets/data.json';
 import audioCount from '../services/audioCount';
+import Bedroom from '../components/Bedroom.vue';
 
 export default {
   data() {

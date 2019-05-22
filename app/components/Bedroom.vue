@@ -12,6 +12,9 @@
       <div class="picture">
         <img v-bind:src="selectedImage2" @click="showPicture2"/>
       </div>
+      <div class="picture">
+        <img v-bind:src="selectedImage3" v-if="showPicturePlayer2 === true"/>
+      </div>
        
        
     </section>
@@ -23,19 +26,28 @@
 </template>
 
 <style scoped>
-  .picture {
-    display: flex;
+  .pictures {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    position: absolute;
+    right: 60px;
+    border: solid 3px blue;
   }
   .picture {
     border: solid 3px red;
     background-color: yellow;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
   }
   img {
     border : solid 4px black;
     width: 100px;
     height: 100px;
+  }
+  .button {
+    position: absolute;
+    left: 60px;
   }
 </style>
 
@@ -44,23 +56,34 @@
 import data from '../assets/data.json';
 import audioCount from '../services/audioCount';
 import Tools from '../components/Tools.vue';
+import Character from '../components/Character.vue';
 
 export default {
     data() {
       return {
         count : 0,
+        character : localStorage.getItem('character'),
         images: [
           'http://via.placeholder.com/350x150',
           'http://via.placeholder.com/200x140',
           'http://via.placeholder.com/200x100'
         ],
-          selectedImage: 'https://static.thenounproject.com/png/393234-200.png',
-          selectedImage1: 'https://static.thenounproject.com/png/393234-200.png',
-          selectedImage2: 'https://static.thenounproject.com/png/393234-200.png'
+        selectedImage: 'https://static.thenounproject.com/png/393234-200.png',
+        selectedImage1: 'https://static.thenounproject.com/png/393234-200.png',
+        selectedImage2: 'https://static.thenounproject.com/png/393234-200.png',
+        selectedImage3: 'https://static.thenounproject.com/png/393234-200.png'
       }
     },
     components: {
-      Tools
+      Tools,
+      Character
+    },
+    computed:{
+      showPicturePlayer2(){
+        if(this.character === 'Amanda') {
+          return true;
+        }
+      }
     },
     mounted() {
       if(localStorage.getItem('image1')){
@@ -72,6 +95,9 @@ export default {
       if(localStorage.getItem('image3')){
           this.selectedImage2 = localStorage.getItem('image3');
       }
+
+      
+
     },
     methods: {
 
@@ -87,6 +113,11 @@ export default {
         this.selectedImage2 = this.images[2];
         localStorage.setItem('image3', this.selectedImage2);
       }
+      // showPicturePlayer2(){
+      //   if(localStorage.getItem('character') === 'Amanda') {
+      //     return true;
+      //   }
+      // }
 
     }
   
