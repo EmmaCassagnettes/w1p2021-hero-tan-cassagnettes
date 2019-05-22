@@ -4,8 +4,19 @@
     <br />
 
     <section class="players">
-      <div @click="choicePlayer1" class="player player1">Emmaaa</div>
-      <div @click="choicePlayer2" class="player player2">Amandaaa</div>
+      <div class="player">
+        <div @click="choicePlayer1" class="player1">Emmaaa</div>
+        <div>Picto skill</div>
+        <div>Fine détective, aux questions aussi précises que subtiles, son air angélique saura vous envoûter et vous faire parler, afin d'obtenir des aveux de vous. Son point fort, l'écoute et la persévérance</div>
+      </div>
+
+      <div class="player">
+        <div @click="choicePlayer2" class="player2">Amandaaa</div>
+        <div>Picto</div>
+        <div>L'observation et le feeling sont ses leitmotiv. Plutôt du style à vivre au jour le jour, à prendre tous les risques sans se soucier du lendemain, elle n'a pas froid aux yeux... d'ailleurs, on l'appelle l'oeil de lynx dans le milieux</div>
+      </div>
+      
+      
     </section>
     
     <template v-if="showPlay === true">
@@ -45,10 +56,6 @@ export default {
   },
   computed: {
     showPlay() {
-      // if(!localStorage.getItem('character')) {
-      //   //console.log('choix fait');
-      //   return false;
-      // } 
       if(this.character != '') {
         return true;
       }
@@ -56,22 +63,17 @@ export default {
   },
   methods: {
     choicePlayer1(){
-      audioCount.increment();
+      //audioCount.increment();
+      audioCount.setvalue(12)
       this.character = 'Emma';
       localStorage.setItem('character', 'Emma');
     },
      choicePlayer2(){
       //audioCount.increment();
+      audioCount.setvalue(10);
       this.character = 'Amanda';
       localStorage.setItem('character', 'Amanda');
     }
-  //   // showPlay() {
-  //   //   if(localStorage.getItem('character')) {
-  //   //     //console.log('choix fait');
-  //   //     return true;
-  //   //   } 
-  //   // }
-  // }
   }
 }
 </script>

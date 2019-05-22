@@ -2,12 +2,14 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 import Home from './components/Home.vue';
+import Rules from './components/Rules.vue';
 import Character from './components/Character.vue';
 import Game from './components/Game.vue';
 import Answer from './components/Answer.vue';
 import Loose from './components/Loose.vue';
 import Win from './components/Win.vue';
 import Bedroom from './components/Bedroom.vue';
+
 
 Vue.use(Router);
 
@@ -19,6 +21,11 @@ const router = new Router({
       path: '/',
       name: 'home',
       component: Home,
+    },
+    {
+      path: '/rules',
+      name: 'rules',
+      component: Rules,
     },
     {
       path: '/character',
