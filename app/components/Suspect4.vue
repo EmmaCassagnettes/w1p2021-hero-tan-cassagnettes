@@ -56,6 +56,8 @@ export default {
       }
 
       audioCount.decrement();
+
+      this.$emit('toParent', this.text);
     }
   }
     

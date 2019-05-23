@@ -1,5 +1,6 @@
 <template>
   <div class="big-header">
+    <img class="bedroom-play" src="../assets/images/bedroom.png">
     <h1>Chambre</h1>
     <br />
     <section class="pictures">
@@ -15,6 +16,10 @@
       <div class="picture">
         <img v-bind:src="selectedImage3" v-if="showPicturePlayer2 === true"/>
       </div>
+      <div class="picture">
+        <img v-bind:src="selectedImage4" @click.once="randomImage2"/>
+      </div>
+      
        
        
     </section>
@@ -22,6 +27,15 @@
 
   
     <Tools></Tools>
+
+     <div class="music">
+      <audio autoplay loop id="player" src="../assets/images/vuejs_projet_sound3.mp3"></audio>
+    <div> 
+    <button class="button" onclick="document.getElementById('player').play()">Sound on</button> 
+    <button class="button" onclick="document.getElementById('player').pause()">Sound off</button> 
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -49,6 +63,11 @@
     position: absolute;
     left: 60px;
   }
+  .bedroom-play {
+    display: block;
+    width: 100vw;
+    height: 70vh;
+  }
 </style>
 
 
@@ -71,7 +90,8 @@ export default {
         selectedImage: 'https://static.thenounproject.com/png/393234-200.png',
         selectedImage1: 'https://static.thenounproject.com/png/393234-200.png',
         selectedImage2: 'https://static.thenounproject.com/png/393234-200.png',
-        selectedImage3: 'https://static.thenounproject.com/png/393234-200.png'
+        selectedImage3: 'https://static.thenounproject.com/png/393234-200.png',
+        selectedImage4: 'https://static.thenounproject.com/png/393234-200.png'
       }
     },
     components: {
@@ -95,7 +115,9 @@ export default {
       if(localStorage.getItem('image3')){
           this.selectedImage2 = localStorage.getItem('image3');
       }
-
+      if(localStorage.getItem('image4')) {
+          this.selectedImage4 = localStorage.getItem('image4');
+      }
       
 
     },
@@ -112,13 +134,18 @@ export default {
       showPicture2() {
         this.selectedImage2 = this.images[2];
         localStorage.setItem('image3', this.selectedImage2);
-      }
+      },
       // showPicturePlayer2(){
       //   if(localStorage.getItem('character') === 'Amanda') {
       //     return true;
       //   }
       // }
-
+      randomImage2 () {
+        const idx = Math.floor(Math.random() * this.images.length);
+        this.selectedImage4 = this.images[idx];
+        localStorage.setItem('image4', this.selectedImage4);
+        
+      }
     }
   
   } 

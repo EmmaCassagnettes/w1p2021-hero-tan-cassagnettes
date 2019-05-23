@@ -1,7 +1,8 @@
 <template>
   <div class="big-header">
-    <h1>Tu as perdu !</h1>
+    <h1 class="loose">case n° 18934FD</h1>
     <br />
+    <img class="unsolved" src="../assets/images/unsolved.png">
     <!-- <input></input> -->
 
   <!-- <template v-if="rechargeAudio < 0">
@@ -18,8 +19,24 @@
     <!-- <router-link 
       class="button" :to="'/game/ + goto'">
       Répondre</router-link> -->
+    <div class="music">
+      <audio autoplay loop id="player" src="../assets/images/vuejs_projet_sound3.mp3"></audio>
+    <div> 
+    <button class="button" onclick="document.getElementById('player').play()">Sound on</button> 
+    <button class="button" onclick="document.getElementById('player').pause()">Sound off</button> 
+      </div>
+    </div>
   </div>
 </template>
+
+<style scoped>
+.loose {
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+</style>
+
 
 <script>
 import data from '../assets/data.json';

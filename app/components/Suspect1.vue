@@ -4,6 +4,7 @@
   
 
      <p>{{ text }}</p>
+     <!-- <p :text="message">{{ text }}</p> -->
   </div>
 </template>
 
@@ -24,6 +25,7 @@ import audioCount from '../services/audioCount';
 import Game from './Game.vue';
 
 export default {
+  props: ['msg'],
   data() {
     return {
       count: 0,
@@ -56,6 +58,8 @@ export default {
       }
 
       audioCount.decrement();
+
+      this.$emit('toParent', this.text);
     }
   }
     
