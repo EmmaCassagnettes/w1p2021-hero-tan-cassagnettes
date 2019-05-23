@@ -3,11 +3,12 @@
     <h1>Niveau {{ id }} - {{ title }}</h1>
     <!-- <h1>{{ subtitle }}</h1> -->
     <br />
-    <div 
+    <img class="game-play" src="../assets/images/gameplay.png">
+    <!-- <div 
       v-for="(suspect, i) in suspects" :key="i" class="button" @click="handleAudio">
         {{ suspect.name }} - {{ suspect.phrases.length }}
     </div>
-    <p class="show-text">Texte attendu</p>
+    <p class="show-text">Texte attendu</p> -->
     <!-- <h2 v-for="(phrase , index) in phrases"></h2> -->
     <!-- <router-link 
       class="button" 
@@ -44,6 +45,14 @@
     </template>
 
     <Tools></Tools>
+
+     <div class="music">
+      <audio autoplay loop id="player" src="../assets/images/vuejs_projet_sound3.mp3"></audio>
+    <div> 
+    <button class="button" onclick="document.getElementById('player').play()">Sound on</button> 
+    <button class="button" onclick="document.getElementById('player').pause()">Sound off</button> 
+      </div>
+    </div>
   </div>
 </template>
 
@@ -59,11 +68,19 @@
     bottom: 100px;
   }
   .suspects {
+    position: absolute;
     display: flex;
   }
   .paragraph {
+    position: absolute;
+    top: 450px;
     border: solid 3px purple;
     padding: 10px;
+  }
+  .game-play {
+    display: block;
+    width: 100vw;
+    height: 70vh;
   }
 </style>
 

@@ -3,6 +3,11 @@
     <h1>Choisis ta détective</h1>
     <br />
 
+  <div class="choice">
+    <img src="../assets/images/detective.png">
+    <img src="../assets/images/Joan_Hickson.jpg">
+  </div>
+
     <section class="players">
       <div class="player">
         <div @click="choicePlayer1" class="player1">Emmaaa</div>
@@ -24,7 +29,13 @@
     </template>
 
     
-
+     <div class="music">
+      <audio autoplay loop id="player" src="../assets/images/vuejs_projet_sound3.mp3"></audio>
+    <div> 
+    <button class="button" onclick="document.getElementById('player').play()">Sound on</button> 
+    <button class="button" onclick="document.getElementById('player').pause()">Sound off</button> 
+      </div>
+    </div>
 
   </div>
 </template>

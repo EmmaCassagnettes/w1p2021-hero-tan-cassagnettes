@@ -1,5 +1,6 @@
 <template>
   <div class="big-header">
+    <img class="bedroom-play" src="../assets/images/bedroom.png">
     <h1>Chambre</h1>
     <br />
     <section class="pictures">
@@ -26,6 +27,15 @@
 
   
     <Tools></Tools>
+
+     <div class="music">
+      <audio autoplay loop id="player" src="../assets/images/vuejs_projet_sound3.mp3"></audio>
+    <div> 
+    <button class="button" onclick="document.getElementById('player').play()">Sound on</button> 
+    <button class="button" onclick="document.getElementById('player').pause()">Sound off</button> 
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -52,6 +62,11 @@
   .button {
     position: absolute;
     left: 60px;
+  }
+  .bedroom-play {
+    display: block;
+    width: 100vw;
+    height: 70vh;
   }
 </style>
 

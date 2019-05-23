@@ -7,8 +7,7 @@
     <input type="text" id="userAnswer" name="userAnswer" class="userAnswer" maxlength="100" value="your answer" v-model.lazy="userAnswer" autocomplete="off" />
    
 
-     <!-- <button @click="handleAnswer" type="submit">Valider</button> -->
-      <button type="submit">Valider</button>
+  
 
 
     <router-link 
@@ -27,6 +26,15 @@
     </template>
 
     <div v-if="errorAnswer === true">Mauvaise réponse</div>
+
+
+    <div class="music">
+      <audio autoplay loop id="player" src="../assets/images/vuejs_projet_sound3.mp3"></audio>
+    <div> 
+    <button class="button" onclick="document.getElementById('player').play()">Sound on</button> 
+    <button class="button" onclick="document.getElementById('player').pause()">Sound off</button> 
+      </div>
+    </div>
     
   </div>
 </template>
