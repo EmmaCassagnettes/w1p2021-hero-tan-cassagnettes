@@ -20,13 +20,15 @@
       Répondre</router-link>
 
   <section class="suspects">
-    <Suspect1></Suspect1>
-    <Suspect2></Suspect2>
-    <Suspect3></Suspect3>
-    <Suspect4></Suspect4>
+    <Suspect1 @toParent="toParent"></Suspect1>
+    <Suspect2 @toParent="toParent"></Suspect2>
+    <Suspect3 @toParent="toParent"></Suspect3>
+    <Suspect4 @toParent="toParent"></Suspect4>
   </section>
 
-    <p>{{ text }} ici</p>
+    <!-- <p :msg='text'>{{ msg }} ici</p> -->
+    <!-- <p :msg='text'>{{ msg }}</p> -->
+    <p class="paragraph">{{ msg }}</p>
     
     <router-link 
       class="button button__bedroom" 
@@ -59,6 +61,10 @@
   .suspects {
     display: flex;
   }
+  .paragraph {
+    border: solid 3px purple;
+    padding: 10px;
+  }
 </style>
 
 <script>
@@ -76,8 +82,9 @@ export default {
     data() {
       return {
         //count : audioCount.value(),
-        text: '',
-        textCount: 0
+        //text: '',
+        textCount: 0,
+        msg:''
         // susp: [
         //   { suspectID: 0, 
         //     name: "Jun", 
@@ -165,7 +172,7 @@ export default {
             this.textCount = 0;
           }
 
-      }
+      },
       // lostGame() {
       //   // if (localStorage.getItem('audio') < 0) {
       //   //   console.log('perdu');
@@ -182,7 +189,9 @@ export default {
       // count() {
       //   return audioCount.value();
       // }
-   
+      toParent(message){
+        this.msg = message;
+      }
 
     }
 }
