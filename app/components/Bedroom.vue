@@ -15,6 +15,10 @@
       <div class="picture">
         <img v-bind:src="selectedImage3" v-if="showPicturePlayer2 === true"/>
       </div>
+      <div class="picture">
+        <img v-bind:src="selectedImage4" @click.once="randomImage2"/>
+      </div>
+      
        
        
     </section>
@@ -71,7 +75,8 @@ export default {
         selectedImage: 'https://static.thenounproject.com/png/393234-200.png',
         selectedImage1: 'https://static.thenounproject.com/png/393234-200.png',
         selectedImage2: 'https://static.thenounproject.com/png/393234-200.png',
-        selectedImage3: 'https://static.thenounproject.com/png/393234-200.png'
+        selectedImage3: 'https://static.thenounproject.com/png/393234-200.png',
+        selectedImage4: 'https://static.thenounproject.com/png/393234-200.png'
       }
     },
     components: {
@@ -95,7 +100,9 @@ export default {
       if(localStorage.getItem('image3')){
           this.selectedImage2 = localStorage.getItem('image3');
       }
-
+      if(localStorage.getItem('image4')) {
+          this.selectedImage4 = localStorage.getItem('image4');
+      }
       
 
     },
@@ -112,13 +119,18 @@ export default {
       showPicture2() {
         this.selectedImage2 = this.images[2];
         localStorage.setItem('image3', this.selectedImage2);
-      }
+      },
       // showPicturePlayer2(){
       //   if(localStorage.getItem('character') === 'Amanda') {
       //     return true;
       //   }
       // }
-
+      randomImage2 () {
+        const idx = Math.floor(Math.random() * this.images.length);
+        this.selectedImage4 = this.images[idx];
+        localStorage.setItem('image4', this.selectedImage4);
+        
+      }
     }
   
   } 
