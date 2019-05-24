@@ -1,19 +1,28 @@
 <template>
   <div class="suspect">
-    <h1 @click="showText" >Suspect {{ name }}</h1><br>
+    <h1 class="name-suspect">{{ name }}</h1>
+    <img class="suspect-photo" @click="showText" src="../assets/images/suspect4.png"/>
+    <br>
   
 
-     <p>{{ text }}</p>
+     <!-- <p>{{ text }}</p> -->
   </div>
 </template>
 
 <style scoped>
 .suspect {
-  border: solid red 4px;
-  color: black;
+  /* border: solid red 4px; */
+  color: white;
 }
 h1 {
-   border: solid blue 4px;
+   /* border: solid blue 4px; */
+}
+.suspect-photo {
+  width: 180px;
+  height: 180px;
+}
+.name-suspect {
+  text-align: center;
 }
 </style>
 

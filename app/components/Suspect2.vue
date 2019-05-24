@@ -1,24 +1,33 @@
 <template>
   <div class="suspect">
-    <h1 @click="showText">Suspect {{ name }}</h1><br>
+    <h1 class="name-suspect">{{ name }}</h1>
+    <img class="suspect-photo" @click="showText" src="../assets/images/suspect2.png"/>
+    <br>
     
     <!-- <p v-for="(phrase, i) in phrases"
       :key="i">
       {{  phrases }}</p> -->
 
     <!-- <p class="showText"></p> -->
-    <p>{{ text }}</p>
+    <!-- <p>{{ text }}</p> -->
   </div>
 </template>
 
 <style scoped>
 .suspect {
-  border: solid black 4px;
-  color: black;
+  /* border: solid black 4px; */
+  color: white;
 }
 
 h1 {
-   border: solid blue 4px;
+   /* border: solid blue 4px; */
+}
+.suspect-photo {
+  width: 120px;
+  height: 180px;
+}
+.name-suspect {
+  text-align: center;
 }
 
 </style>

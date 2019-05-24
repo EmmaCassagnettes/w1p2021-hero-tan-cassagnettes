@@ -23,7 +23,7 @@
        
        
     </section>
-    <router-link class="button" to="/game/1">Retour au salon</router-link>
+    <router-link class="button button__room" to="/game/1">Retour au <br>salon</router-link>
 
   
     <Tools></Tools>
@@ -60,9 +60,17 @@
     width: 200px;
     height: 200px;
   }
-  .button {
+  .button__room {
     position: absolute;
     left: 60px;
+    text-align: center;
+    line-height: 20px;
+
+    background: radial-gradient(12.39px at 50% 81.51%, #FFFFFF 0%, #FFF3DB 100%), #FFF3DB;
+    border: 5px solid #4B2400;
+    box-sizing: border-box;
+    border-radius: 13px;
+    color: black;
   }
   .bedroom-play {
     display: block;
@@ -92,11 +100,16 @@ export default {
           require('../assets/images/image2.png'),
           require('../assets/images/image3.png')
         ],
+        randomImages: [
+          require('../assets/images/randomImage1.png'),
+          require('../assets/images/randomImage2.png'),
+          require('../assets/images/randomImage3.png')
+        ],
         selectedImage: require('../assets/images/clickPhoto.png'),
         selectedImage1: require('../assets/images/clickPhoto.png'),
         selectedImage2: require('../assets/images/clickPhoto.png'),
         selectedImage3: require('../assets/images/clickPhoto.png'),
-        selectedImage4: require('../assets/images/clickPhoto.png')
+        selectedImage4: require('../assets/images/randomImage.png')
       }
     },
     components: {
@@ -146,8 +159,8 @@ export default {
       //   }
       // }
       randomImage2 () {
-        const idx = Math.floor(Math.random() * this.images.length);
-        this.selectedImage4 = this.images[idx];
+        const idx = Math.floor(Math.random() * this.randomImages.length);
+        this.selectedImage4 = this.randomImages[idx];
         localStorage.setItem('image4', this.selectedImage4);
         
       }
