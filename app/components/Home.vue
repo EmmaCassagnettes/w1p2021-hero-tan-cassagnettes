@@ -6,7 +6,7 @@
       <h1 class="titleHome">{{ message }}</h1>
     </div>
     <div class="play">
-    <router-link class="button" to="/rules">Commencer</router-link>
+    <router-link class="button" to="/rules">Nouvelle partie</router-link>
     </div>
     <!-- <video autoplay class="video">
       <source src="">
@@ -18,11 +18,11 @@
       </audio>
     </div> -->
     
-  <div class="music">
+  <div class="music music__bedroom">
     <audio autoplay loop id="player" src="../assets/images/vuejs_projet_sound3.mp3"></audio>
   <div> 
-    <button class="button" onclick="document.getElementById('player').play()">Sound on</button> 
-    <button class="button" onclick="document.getElementById('player').pause()">Sound off</button> 
+    <button class="button button__bedroom" onclick="document.getElementById('player').play()">Sound on</button> 
+    <button class="button button__bedroom" onclick="document.getElementById('player').pause()">Sound off</button> 
   </div>
   </div>
 
@@ -61,6 +61,7 @@
   letter-spacing: .2rem;
   margin-bottom: 10px;
 }
+
 </style>
 
 
