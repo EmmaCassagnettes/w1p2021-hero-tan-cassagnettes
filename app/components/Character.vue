@@ -100,11 +100,12 @@
 }
 
 .picto-audio {
-    position: absolute;
+    /* position: absolute;
     top: 428px;
-    left: 460px;
+    left: 460px; */
     width: 30px;
     height: 30px;
+    
 }
 .skill-picto {
   font-size: 12px;

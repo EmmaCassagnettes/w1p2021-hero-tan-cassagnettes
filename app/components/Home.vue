@@ -4,6 +4,7 @@
     <img class="hostel" src="../assets/images/homepage.gif">
     <div class="title">
       <h1 class="titleHome">{{ message }}</h1>
+      <p class="teaser">Une réunion d'amis tourne mal... l'un d'entre est eux mort. Enquêtez!</p>
     </div>
     <div class="play">
     <router-link class="button" to="/rules">Nouvelle partie</router-link>
@@ -44,6 +45,7 @@
   position: absolute;
   right: 350px;
   top: 200px;
+  margin: 0 auto;
 }
 
 .play {
@@ -60,8 +62,16 @@
   color: #A00000;
   letter-spacing: .2rem;
   margin-bottom: 10px;
+  text-align: center;
 }
-
+.teaser {
+  color: white;
+  font-size: 12px;
+  width: 600px;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
 </style>
 
 
