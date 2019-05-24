@@ -1,8 +1,8 @@
 <template>
   <div class="big-header">
-    <h1>Répondre à la question</h1>
+    <h1>Question du niveau {{id}}</h1>
     <br />
-    <h1>du niveau {{id}}</h1>
+    <h1 class="question">{{subtitle}}</h1>
     <label for="userAnswer">Saisis ta réponse et appuye sur entrer</label>
     <input type="text" id="userAnswer" name="userAnswer" class="userAnswer" maxlength="100" value="your answer" v-model.lazy="userAnswer" autocomplete="off" />
    
@@ -73,9 +73,14 @@ label {
   margin-bottom: 15px;
 
   text-align: center;
+  line-height: 20px;
 }
 .button__rightAnswer {
    color: greenyellow;
+}
+.question {
+  font-size: 12px;
+  color: yellow;
 }
 </style>
 
@@ -99,6 +104,9 @@ export default {
       },
       answer() {
         return data[this.id].answer;
+      },
+      subtitle() {
+        return data[this.id].subtitle;
       },
       // goBack() {
       //   return this.$router.go(-1);

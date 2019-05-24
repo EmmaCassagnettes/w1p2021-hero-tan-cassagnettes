@@ -96,12 +96,16 @@
   }
   .paragraph {
     position: absolute;
-    top: 280px;
+    top: 260px;
     border: solid 3px rgb(255, 154, 3);
     padding: 10px;
     background-color: blanchedalmond;
     color: black;
+    /* text-align: center; */
     border-radius: 13px;
+    font-size: 10px;
+    width: 450px;
+    line-height: 15px;
   }
   .game-play {
     display: block;
