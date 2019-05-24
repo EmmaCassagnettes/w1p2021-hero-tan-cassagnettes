@@ -106,6 +106,7 @@
     width: 30px;
     height: 30px;
     
+    
 }
 .skill-picto {
   font-size: 12px;
