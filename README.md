@@ -2,6 +2,8 @@
 
 URL du site : https://okura-suspects.netlify.com/
 
+URL du figma : https://www.figma.com/file/DOvr38PRQZtsyLR8YLKoRX47/Murder-Vuejs?node-id=0%3A1
+
 ### Groupe
 
 - Amanda Tan
