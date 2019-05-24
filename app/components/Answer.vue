@@ -2,8 +2,8 @@
   <div class="big-header">
     <h1>Répondre à la question</h1>
     <br />
-    <p>{{id}}</p>
-    <label for="userAnswer">Entrez votre réponse</label>
+    <h1>du niveau {{id}}</h1>
+    <label for="userAnswer">Saisis ta réponse et appuye sur entrer</label>
     <input type="text" id="userAnswer" name="userAnswer" class="userAnswer" maxlength="100" value="your answer" v-model.lazy="userAnswer" autocomplete="off" />
    
 
@@ -17,15 +17,15 @@
     </router-link>
 
     <template v-if="handleAnswer">
-      <p>Bravo! Tu peux maintenant passer au niveau suivant</p>
+      <p class="rightAnswer" >Bravo! Tu peux maintenant passer <br>au niveau suivant</p>
       <router-link 
-        class="button" 
+        class="button button__rightAnswer" 
         :to="'/game/' + goto">
         Niveau suivant
       </router-link>
     </template>
 
-    <div v-if="errorAnswer === true">Mauvaise réponse</div>
+    <div class="errorAnswer" v-if="errorAnswer === true">Mauvaise réponse</div>
 
 
     <div class="music">
@@ -40,9 +40,42 @@
 </template>
 
 <style scoped>
+h1 {
+  margin-bottom: 20px;
+ 
+}
 .button__goback {
   position: absolute;
   left: 60px;
+
+  text-align: center;
+  line-height: 20px;
+
+  background: radial-gradient(12.39px at 50% 81.51%, #FFFFFF 0%, #FFF3DB 100%), #FFF3DB;
+  border: 5px solid #4B2400;
+  box-sizing: border-box;
+  border-radius: 13px;
+  color: black;
+}
+label {
+  font-size: 10px;
+
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.errorAnswer {
+  color: red;
+  margin-top: 15px;
+}
+.rightAnswer {
+  color: greenyellow;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  text-align: center;
+}
+.button__rightAnswer {
+   color: greenyellow;
 }
 </style>
 

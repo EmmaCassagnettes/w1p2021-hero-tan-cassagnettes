@@ -16,9 +16,7 @@
   color: white;
  
 }
-h1 {
-   /* border: solid blue 4px; */
-}
+
 .name-suspect {
   text-align: center;
   

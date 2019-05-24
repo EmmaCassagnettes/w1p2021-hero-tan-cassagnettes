@@ -14,9 +14,6 @@
   /* border: solid red 4px; */
   color: white;
 }
-h1 {
-   /* border: solid blue 4px; */
-}
 .suspect-photo {
   width: 120px;
   height: 180px;

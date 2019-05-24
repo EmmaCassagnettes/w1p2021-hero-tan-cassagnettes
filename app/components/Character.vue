@@ -4,28 +4,28 @@
     <br />
 
   <div class="choice">
-    <img src="../assets/images/detective.png">
-    <img src="../assets/images/Joan_Hickson.jpg">
+    <img @click="choicePlayer1" class="choice__emma" src="../assets/images/Emma.png">
+    <img @click="choicePlayer2" class="choice__amanda" src="../assets/images/Amanda.png">
   </div>
 
     <section class="players">
       <div class="player">
-        <div @click="choicePlayer1" class="player1">Emmaaa</div>
-        <div>Picto skill</div>
-        <div>Fine détective, aux questions aussi précises que subtiles, son air angélique saura vous envoûter et vous faire parler, afin d'obtenir des aveux de vous. Son point fort, l'écoute et la persévérance</div>
+        <div @click="choicePlayer1" class="player1">Emma</div>
+        <div class="skill-picto">Skill: +2<img class="picto-audio" src="../assets/images/picto-audio.png" alt="audio_picto"></div>
+        <div class="character_description">Fine détective, aux questions aussi précises que subtiles, son air angélique saura vous envoûter et vous faire parler, afin d'obtenir des aveux de vous. Son point fort, l'écoute et la persévérance</div>
       </div>
 
       <div class="player">
-        <div @click="choicePlayer2" class="player2">Amandaaa</div>
-        <div>Picto</div>
-        <div>L'observation et le feeling sont ses leitmotiv. Plutôt du style à vivre au jour le jour, à prendre tous les risques sans se soucier du lendemain, elle n'a pas froid aux yeux... d'ailleurs, on l'appelle l'oeil de lynx dans le milieux</div>
+        <div @click="choicePlayer2" class="player2">Amanda</div>
+        <div class="skill-picto">Skill: +1 photo</div>
+        <div class="character_description">L'observation et le feeling sont ses leitmotiv. Plutôt du style à vivre au jour le jour, à prendre tous les risques sans se soucier du lendemain, elle n'a pas froid aux yeux... d'ailleurs, on l'appelle l'oeil de lynx dans le milieux</div>
       </div>
       
       
     </section>
     
     <template v-if="showPlay === true">
-      <router-link class="button" to="/game/1">Jouer</router-link>
+      <router-link class="button button__play" to="/game/1">Jouer</router-link>
     </template>
 
     
@@ -42,14 +42,72 @@
 
 <style scoped>
 .players {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  /* border: solid 1px greenyellow; */
+  
 }
 
 .player {
+  
   border: solid 3px black;
   margin: 20px;
   width: 200px;
   height: 200px;
+}
+
+.player1, .player2 {
+  text-align: center;
+  margin-bottom: 20px; 
+}
+
+.choice__emma {
+  width: 200px;
+  height: 200px;
+  margin-left: -10px;
+
+  
+}
+.choice__emma:active {
+  border: solid 4px red;
+}
+.choice__amanda {
+  width: 200px;
+  height: 200px;
+  margin-left: 40px;
+}
+.choice__amanda:active {
+  border: solid 4px red;
+  
+}
+.character_description {
+  font-size: 10px;
+  line-height: 90%;
+  /* border: solid 1px yellow; */
+  width: 230px;
+  margin-top: 20px;
+
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 110%;
+
+}
+
+.picto-audio {
+    position: absolute;
+    top: 428px;
+    left: 460px;
+    width: 30px;
+    height: 30px;
+}
+.skill-picto {
+  font-size: 12px;
+}
+.button__play {
+  position: absolute;
+  bottom: 100px;
 }
 </style>
 

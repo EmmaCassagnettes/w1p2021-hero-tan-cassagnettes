@@ -3,6 +3,12 @@
     <h1>Niveau {{ id }} - {{ title }}</h1>
     <!-- <h1>{{ subtitle }}</h1> -->
     <br />
+
+    <router-link 
+      class="button button__goBackHome" 
+      to='/'>
+      Retour à l'accueil</router-link>
+
     <img class="game-play" src="../assets/images/gameplay.png">
     <!-- <div 
       v-for="(suspect, i) in suspects" :key="i" class="button" @click="handleAudio">
@@ -73,7 +79,7 @@
   }
   .button__answer {
     position: absolute;
-    bottom: 100px;
+    bottom: 45px;
     color: black;
     line-height: 20px;
 
@@ -106,6 +112,12 @@
     position: absolute;
     left: 0;
   } */
+  .button__goBackHome {
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    font-size: 12px;
+  }
 </style>
 
 <script>
