@@ -17,7 +17,7 @@ URL du figma : https://www.figma.com/file/DOvr38PRQZtsyLR8YLKoRX47/Murder-Vuejs?
 | Setup | Le site est en ligne, et l'URL est citée dans le README.md | Oui |
 | Setup | Le site utilise VueJS | Oui |
 | Setup | Cloner le repository et exécuter `npm install` puis `npm run dev` s'effectue sans encombre | Oui |
-| Données | Un schéma numérique ou papier (scanné ou photographié) décrivant les différentes étapes et enchaînements possible. Affiché dans ce readme (si plusieurs images sont nécessaires, en afficher plusieurs, mais essayer d'être synthétique). | - |
+| Données | Un schéma numérique ou papier (scanné ou photographié) décrivant les différentes étapes et enchaînements possible. Affiché dans ce readme (si plusieurs images sont nécessaires, en afficher plusieurs, mais essayer d'être synthétique). | Oui |
 | Données | Un fichier `data.json` est utilisé pour stocker la structure du jeu | Oui |
 | Données | Le fichier `data.json` décrit 30 phases de jeu ou plus. Indiquez *En partie* s'il en décrit plus de 15. | Non |
 | Pages | Une page d'accueil est présente | Oui |
@@ -30,13 +30,13 @@ URL du figma : https://www.figma.com/file/DOvr38PRQZtsyLR8YLKoRX47/Murder-Vuejs?
 | Transitions | Les transitions internes au jeu (d'une étape à une autre) et externes (intro, fin...) sont différentes | Non |
 | État | Le choix du personnage et/ou de ses caractéristiques impacte l'aventure au moins une fois. **Selon le choix du personnage, le joueur dispose d'audios ou de loupes.** | Oui |
 | État | Une décision ou un événement aléatoire survenu pendant l'aventure a un impact sur la suite, au moins une fois. **Dans la chambre, le joueur peut accéder à deux indices au maximum mais selon sa chance l'indice peut être le même ce qui rend l'énigme à résoudre plus difficile.** | Oui |
-| État | Le choix du personnage et/ou ce qu'il s'est passé pendant l'aventure impactent l'écran de fin. **Indiquez ici comment succintement.** | - |
+| État | Le choix du personnage et/ou ce qu'il s'est passé pendant l'aventure impactent l'écran de fin. **Indiquez ici comment succintement.** | Non |
 | État | Au moins un service (classe de type `GameService`) est utilisé | Oui |
 | Sauvegarde | Lorsqu'on recharge la page (`Ctrl + R`), le personnage, ses caractéristiques, les choix du joueur et tout le reste sont rétablis | En partie |
-| Sauvegarde | Lorsqu'on quitte le jeu et qu'on revient plus tard à la page d'accueil (sur le même navigateur), il est possible de reprendre l'aventure où on l'avait laissée | - |
-| Multimédia | L'expérience présente une vidéo ou plus | - |
-| Multimédia | L'expérience présente un audio ou plus | - |
-| Multimédia | L'utilisateur a la possibilité de couper le son à tout moment | - |
+| Sauvegarde | Lorsqu'on quitte le jeu et qu'on revient plus tard à la page d'accueil (sur le même navigateur), il est possible de reprendre l'aventure où on l'avait laissée | Non |
+| Multimédia | L'expérience présente une vidéo ou plus | Non |
+| Multimédia | L'expérience présente un audio ou plus | Oui |
+| Multimédia | L'utilisateur a la possibilité de couper le son à tout moment | Oui |
 
 ## Prologue
 
