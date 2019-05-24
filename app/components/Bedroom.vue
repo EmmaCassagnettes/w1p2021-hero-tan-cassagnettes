@@ -2,6 +2,8 @@
   <div class="big-header">
     <img class="bedroom-play" src="../assets/images/bedroom.png">
     <!-- <h1>Chambre</h1> -->
+      <p class="random-image">La photo random : si tu as de la chance, tu pourras voir une photo inédite!</p>
+      <p class="random-image">Sinon, c'est une photo hors sujet ou bien une photo que tu as déjà vu.</p>
     <br />
     <section class="pictures">
       <div class="picture" @click="showPicture">
@@ -18,8 +20,9 @@
       </div>
       <div class="picture">
         <img class="photos" v-bind:src="selectedImage4" @click.once="randomImage2"/>
+        
       </div>
-      
+   
        
        
     </section>
@@ -80,6 +83,12 @@
   .music__bedroom {
   position: absolute;
   left: 0;
+}
+.random-image {
+  width: 500px;
+  font-size: 10px;
+  line-height: 15px;
+  
 }
 </style>
 
