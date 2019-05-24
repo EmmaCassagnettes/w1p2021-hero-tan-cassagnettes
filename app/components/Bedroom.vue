@@ -1,40 +1,40 @@
 <template>
   <div class="big-header">
     <img class="bedroom-play" src="../assets/images/bedroom.png">
-    <h1>Chambre</h1>
+    <!-- <h1>Chambre</h1> -->
     <br />
     <section class="pictures">
       <div class="picture" @click="showPicture">
-        <img v-bind:src="selectedImage"/>
+        <img class="photos" v-bind:src="selectedImage"/>
       </div>
       <div class="picture">
-        <img v-bind:src="selectedImage1" @click="showPicture1"/>
+        <img class="photos" v-bind:src="selectedImage1" @click="showPicture1"/>
       </div>
       <div class="picture">
-        <img v-bind:src="selectedImage2" @click="showPicture2"/>
+        <img  class="photos" v-bind:src="selectedImage2" @click="showPicture2"/>
       </div>
-      <div class="picture">
+      <div>
         <img v-bind:src="selectedImage3" v-if="showPicturePlayer2 === true"/>
       </div>
       <div class="picture">
-        <img v-bind:src="selectedImage4" @click.once="randomImage2"/>
+        <img class="photos" v-bind:src="selectedImage4" @click.once="randomImage2"/>
       </div>
       
        
        
     </section>
-    <router-link class="button" to="/game/1">Retour au salon</router-link>
+    <router-link class="button button__room" to="/game/1">Retour au <br>salon</router-link>
 
   
     <Tools></Tools>
 
-     <div class="music">
+     <!-- <div class="music">
       <audio autoplay loop id="player" src="../assets/images/vuejs_projet_sound3.mp3"></audio>
     <div> 
     <button class="button" onclick="document.getElementById('player').play()">Sound on</button> 
     <button class="button" onclick="document.getElementById('player').pause()">Sound off</button> 
       </div>
-    </div>
+    </div> -->
 
   </div>
 </template>
@@ -45,29 +45,42 @@
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
     position: absolute;
-    right: 60px;
-    border: solid 3px blue;
+    right: 100px;
+    /* border: solid 3px blue; */
   }
   .picture {
-    border: solid 3px red;
+    /* border: solid 3px red; */
     background-color: yellow;
+    /* width: 200px;
+    height: 200px; */
+  }
+  .photos {
+    /* //border : solid 4px black; */
+    border: solid 3px white;
     width: 200px;
     height: 200px;
   }
-  img {
-    border : solid 4px black;
-    width: 100px;
-    height: 100px;
-  }
-  .button {
+  .button__room {
     position: absolute;
     left: 60px;
+    text-align: center;
+    line-height: 20px;
+
+    background: radial-gradient(12.39px at 50% 81.51%, #FFFFFF 0%, #FFF3DB 100%), #FFF3DB;
+    border: 5px solid #4B2400;
+    box-sizing: border-box;
+    border-radius: 13px;
+    color: black;
   }
   .bedroom-play {
     display: block;
     width: 100vw;
     height: 70vh;
   }
+  .music__bedroom {
+  position: absolute;
+  left: 0;
+}
 </style>
 
 
@@ -83,15 +96,20 @@ export default {
         count : 0,
         character : localStorage.getItem('character'),
         images: [
-          'http://via.placeholder.com/350x150',
-          'http://via.placeholder.com/200x140',
-          'http://via.placeholder.com/200x100'
+          require('../assets/images/image1.png'),
+          require('../assets/images/image2.png'),
+          require('../assets/images/image3.png')
         ],
-        selectedImage: 'https://static.thenounproject.com/png/393234-200.png',
-        selectedImage1: 'https://static.thenounproject.com/png/393234-200.png',
-        selectedImage2: 'https://static.thenounproject.com/png/393234-200.png',
-        selectedImage3: 'https://static.thenounproject.com/png/393234-200.png',
-        selectedImage4: 'https://static.thenounproject.com/png/393234-200.png'
+        randomImages: [
+          require('../assets/images/randomImage1.png'),
+          require('../assets/images/randomImage2.png'),
+          require('../assets/images/randomImage3.png')
+        ],
+        selectedImage: require('../assets/images/clickPhoto.png'),
+        selectedImage1: require('../assets/images/clickPhoto.png'),
+        selectedImage2: require('../assets/images/clickPhoto.png'),
+        selectedImage3: require('../assets/images/clickPhoto.png'),
+        selectedImage4: require('../assets/images/randomImage.png')
       }
     },
     components: {
@@ -141,8 +159,8 @@ export default {
       //   }
       // }
       randomImage2 () {
-        const idx = Math.floor(Math.random() * this.images.length);
-        this.selectedImage4 = this.images[idx];
+        const idx = Math.floor(Math.random() * this.randomImages.length);
+        this.selectedImage4 = this.randomImages[idx];
         localStorage.setItem('image4', this.selectedImage4);
         
       }

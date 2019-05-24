@@ -21,7 +21,7 @@
       Répondre</router-link>
 
   <section class="suspects">
-    <Suspect1 @toParent="toParent"></Suspect1>
+    <Suspect1 class="suspect1" @toParent="toParent"></Suspect1>
     <Suspect2 @toParent="toParent"></Suspect2>
     <Suspect3 @toParent="toParent"></Suspect3>
     <Suspect4 @toParent="toParent"></Suspect4>
@@ -61,27 +61,51 @@
   .button__bedroom {
     position: absolute;
     right: 60px;
-    width: 80px;
+    width: 140px;
+    font-size: 12px;
+    line-height: 20px;
+
+    background: radial-gradient(12.39px at 50% 81.51%, #FFFFFF 0%, #FFF3DB 100%), #FFF3DB;
+    border: 5px solid #4B2400;
+    box-sizing: border-box;
+    border-radius: 13px;
+    color: black;
   }
   .button__answer {
     position: absolute;
     bottom: 100px;
+    color: black;
+    line-height: 20px;
+
+    background: radial-gradient(12.39px at 50% 81.51%, #FFFFFF 0%, #FFF3DB 100%), #FFF3DB;
+    border: 5px solid #4B2400;
+    box-sizing: border-box;
+    border-radius: 13px;
+    color: black;
   }
   .suspects {
     position: absolute;
     display: flex;
+    bottom: 200px;
   }
   .paragraph {
     position: absolute;
-    top: 450px;
-    border: solid 3px purple;
+    top: 280px;
+    border: solid 3px rgb(255, 154, 3);
     padding: 10px;
+    background-color: blanchedalmond;
+    color: black;
+    border-radius: 13px;
   }
   .game-play {
     display: block;
     width: 100vw;
     height: 70vh;
   }
+  /* .suspect1 {
+    position: absolute;
+    left: 0;
+  } */
 </style>
 
 <script>
@@ -101,7 +125,7 @@ export default {
         //count : audioCount.value(),
         //text: '',
         textCount: 0,
-        msg:''
+        msg:'...'
         // susp: [
         //   { suspectID: 0, 
         //     name: "Jun", 
