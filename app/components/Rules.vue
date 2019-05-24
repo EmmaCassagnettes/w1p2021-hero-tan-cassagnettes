@@ -2,6 +2,10 @@
   <div class="big-header">
     <h1 class="rulesGame">Regles du jeu</h1>
     <br />
+     <router-link 
+      class="button button__goBackHome" 
+      to='/'>
+      Retour à l'accueil</router-link>
 
     <p>Déduction, attention, chance... seront les clés du succès! <br>
     - Débloquez les niveaux en répondant aux questions. <br>
@@ -38,6 +42,12 @@ p {
   padding: 20px;
   line-height: 32px;
 }
+ .button__goBackHome {
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    font-size: 12px;
+  }
 </style>
 
 

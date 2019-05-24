@@ -2,6 +2,10 @@
   <div class="big-header">
     <h1>Choisis ta détective</h1>
     <br />
+     <router-link 
+      class="button button__goBackHome" 
+      to='/'>
+      Retour à l'accueil</router-link>
 
   <div class="choice">
     <img @click="choicePlayer1" class="choice__emma" src="../assets/images/Emma.png">
@@ -108,6 +112,12 @@
 .button__play {
   position: absolute;
   bottom: 100px;
+}
+.button__goBackHome {
+  position: absolute;
+  top: 20px;
+  right: 60px;
+  font-size: 12px;
 }
 </style>
 
