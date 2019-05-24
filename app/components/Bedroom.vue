@@ -14,7 +14,7 @@
         <img  class="photos" v-bind:src="selectedImage2" @click="showPicture2"/>
       </div>
       <div>
-        <img v-bind:src="selectedImage3" v-if="showPicturePlayer2 === true"/>
+        <img class="photos" v-bind:src="selectedImage3" v-if="showPicturePlayer2 === true"/>
       </div>
       <div class="picture">
         <img class="photos" v-bind:src="selectedImage4" @click.once="randomImage2"/>
@@ -103,7 +103,8 @@ export default {
         randomImages: [
           require('../assets/images/randomImage1.png'),
           require('../assets/images/randomImage2.png'),
-          require('../assets/images/randomImage3.png')
+          require('../assets/images/randomImage3.png'),
+          require('../assets/images/smartphone1.png')
         ],
         selectedImage: require('../assets/images/clickPhoto.png'),
         selectedImage1: require('../assets/images/clickPhoto.png'),
@@ -119,6 +120,7 @@ export default {
     computed:{
       showPicturePlayer2(){
         if(this.character === 'Amanda') {
+          this.selectedImage3 = this.randomImages[0];
           return true;
         }
       }
