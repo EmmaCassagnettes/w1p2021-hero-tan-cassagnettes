@@ -15,6 +15,7 @@ URL du site : https://okura-suspects.netlify.com/
 | Setup | Le site est en ligne, et l'URL est citée dans le README.md | Oui |
 | Setup | Le site utilise VueJS | Oui |
 | Setup | Cloner le repository et exécuter `npm install` puis `npm run dev` s'effectue sans encombre | Oui |
+| Données | Un schéma numérique ou papier (scanné ou photographié) décrivant les différentes étapes et enchaînements possible. Affiché dans ce readme (si plusieurs images sont nécessaires, en afficher plusieurs, mais essayer d'être synthétique). | - |
 | Données | Un fichier `data.json` est utilisé pour stocker la structure du jeu | Oui |
 | Données | Le fichier `data.json` décrit 30 phases de jeu ou plus. Indiquez *En partie* s'il en décrit plus de 15. | Non |
 | Pages | Une page d'accueil est présente | Oui |
@@ -34,7 +35,6 @@ URL du site : https://okura-suspects.netlify.com/
 | Multimédia | L'expérience présente une vidéo ou plus | - |
 | Multimédia | L'expérience présente un audio ou plus | - |
 | Multimédia | L'utilisateur a la possibilité de couper le son à tout moment | - |
-| Facultatif | Le repository contient un dossier /ressources contenant toutes les ressources ayant servi à la conception du jeu (schéma, design, figma...) | - |
 
 ## Prologue
 
