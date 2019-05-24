@@ -42,7 +42,7 @@
 
 .title {
   position: absolute;
-  right: 400px;
+  right: 350px;
   top: 200px;
 }
 
